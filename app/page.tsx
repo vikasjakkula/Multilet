@@ -3,6 +3,7 @@
 import Link from "next/link";
 import "./globals.css";
 import LiquidEther from "./LiquidEther";
+import SplashCursor from "../components/SplashCursor";
 
 export default function Home() {
   return (
@@ -10,6 +11,10 @@ export default function Home() {
       {/* LiquidEther background */}
       <div className="absolute inset-0 w-full h-full pointer-events-none z-0">
         <LiquidEther className="w-full h-full" />
+      </div>
+      {/* SplashCursor overlay */}
+      <div className="fixed inset-0 pointer-events-none z-20">
+        <SplashCursor />
       </div>
       {/* Main content */}
       <div className="flex flex-col items-center gap-8 z-10 relative">
@@ -37,6 +42,7 @@ export default function Home() {
             <button className="w-full py-2 px-4 rounded bg-blue-600 text-white hover:bg-blue-700 transition">Sign Up</button>
           </Link>
         </div>
+        <h1>Please wait for a second after Clicking the buttons above!</h1>
       </div>
     </div>
   );
