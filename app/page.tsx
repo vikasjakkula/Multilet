@@ -1,10 +1,18 @@
+"use client";
+
 import Link from "next/link";
 import "./globals.css";
+import LiquidEther from "./LiquidEther";
 
 export default function Home() {
   return (
-    <div className="min-h-screen flex items-center justify-center bg-white">
-      <div className="flex flex-col items-center gap-8">
+    <div className="min-h-screen flex items-center justify-center bg-white relative overflow-hidden">
+      {/* LiquidEther background */}
+      <div className="absolute inset-0 w-full h-full pointer-events-none z-0">
+        <LiquidEther className="w-full h-full" />
+      </div>
+      {/* Main content */}
+      <div className="flex flex-col items-center gap-8 z-10 relative">
         <h1 className="text-4xl font-raleway mb-6">Welcome</h1>
         <div className="flex flex-col gap-4 w-48">
           <Link href="/Pricing" passHref>
